@@ -1,0 +1,40 @@
+:root {
+    --bg-color : rgb(80, 95, 76);
+    --head-color : rgb(18, 54, 4);
+    --main-color : rgb(247, 247, 247);
+    --head-size : 40px;
+    --main-size : 20px;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {
+    color: var(--head-color);
+    font-size: var(--head-size);
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline 4px;
+}
+
+p {
+    color: var(--main-color);
+    font-size: var(--main-size);
+    text-align: center;
+    font-style: italic;
+}
+
+hr {
+    width: 15%;
+    color: var(--main-color);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
