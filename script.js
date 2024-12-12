@@ -13,6 +13,14 @@ class ProductProperties {
     toString() {
         return console.log(`The product is ${this.name}, costs $ ${this.price}, and there is a quantity of ${this.quantity}`); 
     }
+
+    //part3 static method
+    static applyDiscount(products, discount) {
+        products.forEach(product => {
+            product.price -= product.price * discount;
+        });
+        
+    }
 }
 
 //part 2 adding inheritance
