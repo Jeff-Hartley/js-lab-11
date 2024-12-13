@@ -7,11 +7,11 @@ class ProductProperties {
     }
 
     getTotalValue() {
-        return console.log(this.price * this.quanity);
+        return (this.price * this.quantity);
     }
 
     toString() {
-        return console.log(`The product is ${this.name}, costs $ ${this.price}, and there is a quantity of ${this.quantity}`); 
+        return (`The product is ${this.name}, costs $ ${this.price}, and there is a quantity of ${this.quantity}`); 
     }
 
     //part3 static method
@@ -31,12 +31,19 @@ class PerishableProductProperties extends ProductProperties {
     }
 
     toString() {
-        return console.log(`The product is ${this.name}, it will expire on ${this.expirationDate}, costs $ ${this.price}, and there is a quantity of ${this.quantity}`); 
+        return (`The product is ${this.name}, it will expire on ${this.expirationDate}, costs $ ${this.price}, and there is a quantity of ${this.quantity}`); 
+    }
+}
+
+//part 4 store management
+class Store {
+    constructor() {
+        this.inventory = [];
     }
 }
 
 let iceCream = new PerishableProductProperties('Ice Cream', 6.99, 15, "Jan 9 2025");
 let ryeBread = new PerishableProductProperties('Rye Bread', 3.75, 28, "Dec 21 2024");
 
-iceCream.toString();
-ryeBread.toString();
+console.log(iceCream.toString());
+console.log(ryeBread.toString());
