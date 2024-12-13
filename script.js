@@ -45,7 +45,7 @@ class Store {
         this.inventory.push(product);
     }
 
-    getInventoryVale() {
+    getInventoryValue() {
         //initializing inventory value as 0
         let inventoryValue = 0;
 
@@ -57,19 +57,38 @@ class Store {
     }
 
     findProductByName(name) {
+        
         for (let i = 0; i < this.inventory.length; i++) {
-            if (this.inventory[i].name === name) {
+            if (this.inventory[i].name.toLowerCase() === name.toLowerCase()) {
                 return this.inventory[i];
             }
-            else {
-                return null;
-            }
         }
+        return null;
     }
 }
 
+
+// part 5 testing the system
 let iceCream = new PerishableProductProperties('Ice Cream', 6.99, 15, "Jan 9 2025");
 let ryeBread = new PerishableProductProperties('Rye Bread', 3.75, 28, "Dec 21 2024");
+let potatoChips = new ProductProperties('Lays Chips', 5.99, 70);
+let cookies = new ProductProperties('Cookies', 3.97, 50);
+let rice = new ProductProperties('rice', 2.99, 52);
 
-console.log(iceCream.toString());
-console.log(ryeBread.toString());
+let groceryStore = new Store();
+
+groceryStore.addProduct(iceCream);
+groceryStore.addProduct(ryeBread);
+groceryStore.addProduct(potatoChips);
+groceryStore.addProduct(cookies);
+groceryStore.addProduct(rice);
+
+
+console.log(`The total value of the inventory before discount is: ${groceryStore.getInventoryValue()}`);
+
+ProductProperties.applyDiscount(groceryStore.inventory, 0.15);
+console.log(`The total value of the inventory after 15% discount is: ${groceryStore.getInventoryValue()}`);
+
+
+
+console.log(groceryStore.findProductByName('rice'));
