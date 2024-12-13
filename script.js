@@ -40,6 +40,32 @@ class Store {
     constructor() {
         this.inventory = [];
     }
+
+    addProduct(product) {
+        this.inventory.push(product);
+    }
+
+    getInventoryVale() {
+        //initializing inventory value as 0
+        let inventoryValue = 0;
+
+        for(let i=0; i< this.inventory.length; i++) {
+            inventoryValue += this.inventory[i].getTotalValue();
+        }
+
+        return inventoryValue;
+    }
+
+    findProductByName(name) {
+        for (let i = 0; i < this.inventory.length; i++) {
+            if (this.inventory[i].name === name) {
+                return this.inventory[i];
+            }
+            else {
+                return null;
+            }
+        }
+    }
 }
 
 let iceCream = new PerishableProductProperties('Ice Cream', 6.99, 15, "Jan 9 2025");
