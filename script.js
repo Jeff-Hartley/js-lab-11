@@ -19,6 +19,7 @@ class ProductProperties {
     //part3 static method
     //static method 
     static applyDiscount(products, discount) {
+        //for each loop that will apply discount to every product of the array
         products.forEach(product => {
             product.price = product.price - (product.price * discount);
         });
@@ -57,6 +58,7 @@ class Store {
         //initializing inventory value as 0
         let inventoryValue = 0;
 
+        //for loop to go through the array of the inventory
         for(let i=0; i< this.inventory.length; i++) {
             inventoryValue += this.inventory[i].getTotalValue();
         }
@@ -67,6 +69,7 @@ class Store {
     //method to find product by name
     findProductByName(name) {
         
+        //for loop to go through the inventory in order to find a product by name
         for (let i = 0; i < this.inventory.length; i++) {
             if (this.inventory[i].name.toLowerCase() === name.toLowerCase()) {
                 return this.inventory[i];
